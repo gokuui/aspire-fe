@@ -1,0 +1,32 @@
+// for keeping common styles across cards
+
+.card-details-accordion {
+  padding: 1.5rem;
+  background-color: #f5f9ff !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+
+  box-shadow: 0px 0px 8px #0000000a !important;
+
+  .accordion-button {
+    background-color: transparent !important;
+    padding: 0;
+    box-shadow: none !important;
+    gap: 0.75rem;
+    font-size: 14px;
+
+    &::after {
+      background-image: url("../../assets/images/up-arrow.svg");
+    }
+
+    &:not(.collapsed)::after {
+      background-image: url("../../assets/images/down-arrow.svg");
+      transform: none;
+    }
+  }
+}
+
+.accordion-item {
+  border: 1px solid #f5f5f5 !important;
+  border-radius: 0.5rem !important;
+}

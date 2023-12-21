@@ -1,0 +1,21 @@
+:root {
+  --app-primary: #01d167;
+}
+
+.app-container {
+  height: 100vh;
+}
+
+.app-container {
+  .row {
+    height: 100%;
+
+    & > * {
+      padding: 0;
+    }
+  }
+}
+
+.page-container {
+  padding: 2.5rem;
+}

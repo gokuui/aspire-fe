@@ -1,0 +1,105 @@
+.card-container {
+  .card-component {
+    background-color: var(--app-primary);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: 12px;
+
+    padding: 1.68rem;
+    color: white;
+
+    .card-aspire-logo {
+      align-self: flex-end;
+      height: 1.5rem;
+      margin-bottom: 1.68rem;
+    }
+
+    .card-name {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 1.68rem;
+    }
+
+    .card-number-container {
+      display: flex;
+      gap: 1.68rem;
+      align-items: center;
+      list-style: none;
+
+      font-weight: bold;
+      font-size: 0.875rem;
+      padding: 0;
+
+      .card-number-section {
+        display: flex;
+        gap: 0.4rem;
+      }
+
+      .card-number-dots {
+        font-size: 0.5rem;
+      }
+    }
+
+    .cvv-container {
+      display: flex;
+      gap: 2.5rem;
+      font-weight: bold;
+      font-size: 0.875rem;
+      align-items: center;
+      margin-bottom: 0.25rem;
+      line-height: 1.25rem;
+
+      p {
+        margin: 0;
+      }
+
+      .mask-cvv {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .card-visa-logo {
+      align-self: flex-end;
+      height: 1.5rem;
+    }
+  }
+
+  .card-frozen {
+    cursor: none;
+    opacity: 0.5;
+    background-color: grey;
+  }
+
+  .show-card-number-container {
+    margin-bottom: 0.75rem;
+    text-align: right;
+    cursor: pointer;
+
+    img {
+      margin-right: 0.375rem;
+    }
+
+    span {
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      font-weight: bold;
+      color: var(--app-primary);
+      display: inline-block;
+    }
+  }
+
+  .mobile-view {
+    display: flex;
+    justify-content: flex-end;
+
+    .show-card-number-container {
+      background-color: #ffffff;
+      border-radius: 0.375rem 0.375rem 0 0;
+      margin-bottom: 0;
+      padding: 0.25rem 0.625rem;
+    }
+  }
+}

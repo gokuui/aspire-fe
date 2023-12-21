@@ -1,0 +1,47 @@
+.mobile-footer-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 2.5rem;
+  justify-content: space-between;
+  margin: 0;
+  background-color: #ffffff;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+
+  list-style: none;
+
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    span {
+      font-size: 0.5rem;
+      line-height: 0.75rem;
+      color: #dddddd;
+    }
+
+    &.active {
+      span {
+        color: #01d167;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mobile-footer-container {
+    padding: 0.5rem 1rem;
+  }
+}

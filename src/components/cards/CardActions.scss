@@ -1,0 +1,33 @@
+.card-action-container {
+  display: flex;
+  background-color: #ecf3fe;
+  border-radius: 1rem;
+  justify-content: space-between;
+  font-size: 0.875rem;
+
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 0;
+
+  .action-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      height: 2rem;
+      width: 2rem;
+    }
+
+    .action-text {
+      color: #0c365a;
+      text-align: center;
+    }
+  }
+
+  &.mobile-view {
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem 1.75rem;
+  }
+}

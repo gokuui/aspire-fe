@@ -1,0 +1,213 @@
+.card-page-container {
+  .desktop-card-page-container {
+    display: flex;
+    flex-direction: column;
+
+    padding: 3.75rem;
+  }
+
+  .cards-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .available-balance-heading {
+    color: #222222;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    margin-bottom: 0;
+  }
+
+  .balance-new-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .new-card {
+      background-color: #325baf !important;
+      border-radius: 4px;
+
+      img {
+        margin-right: 0.5rem;
+      }
+
+      span {
+        font-size: 0.875rem;
+        line-height: 1.125rem;
+        font-weight: bold;
+      }
+    }
+
+    .available-balance {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      .currency-type {
+        background-color: var(--app-primary);
+        border-radius: 4px;
+        font-size: 0.875rem;
+        line-height: 1rem;
+        color: #ffffff;
+        padding: 0.25rem 0.75rem;
+      }
+
+      .currency-value {
+        font-size: 1.625rem;
+        line-height: 1.25rem;
+        color: #222222;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .cards-tab-container {
+    border-bottom: none;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+    .nav-link {
+      color: #222222;
+      opacity: 0.3;
+      border: none;
+
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      padding: 0.25rem 0;
+
+      &.active {
+        opacity: 1;
+        font-weight: 700;
+        border-bottom: 2px solid #23cefd;
+      }
+    }
+  }
+
+  .cards-tab-container {
+    border-bottom: none;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+
+    .nav-link {
+      color: #222222;
+      opacity: 0.3;
+      border: none;
+
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      padding: 0.25rem 0;
+
+      &.active {
+        opacity: 1;
+        font-weight: 700;
+        border-bottom: 2px solid #23cefd;
+      }
+    }
+  }
+
+  .cards-tab-content {
+    border: 1px solid rgba(252, 252, 252, 1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem 2.5rem;
+    border-radius: 0.5rem;
+
+    .row {
+      column-gap: 2.875rem;
+      row-gap: 1.5rem;
+    }
+
+    .debit-card-left-side-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .debit-card-right-side-container {
+      gap: 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 2.25rem;
+    }
+  }
+}
+
+// mobile specific styles
+.mobile-card-page-container {
+  .mobile-cards-header {
+    background-color: #0c365a;
+    padding: 3.2rem 1.5rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .available-balance-heading {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .currency-value {
+      color: #ffffff !important;
+    }
+
+    .new-card {
+      background-color: transparent !important;
+      color: #23cefd;
+      border: none;
+      outline: none;
+      padding: 0;
+    }
+  }
+
+  .cards-tab-container {
+    margin-bottom: 0;
+    border-radius: 0px;
+    background-color: #0c365a;
+    padding: 0 1.5rem 1.5rem;
+
+    .nav-link {
+      color: #ffffff;
+      opacity: 0.5;
+      border: none;
+      border-radius: 0px;
+
+      &.active {
+        font-weight: bold;
+        background-color: transparent !important;
+        color: white;
+      }
+    }
+  }
+
+  .cards-tab-content {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+
+    .debit-card-mobile-card-container {
+      background-color: #0c365a;
+      padding: 0 1.5rem 0.5rem;
+    }
+
+    .debit-card-mobile-card-actions {
+      background-color: #0c365a;
+    }
+
+    .debit-card-mobile-bottom-container {
+      padding: 1.5rem;
+      gap: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 4rem;
+    }
+
+    &.all-company-cards {
+      padding: 1.5rem;
+    }
+  }
+}
