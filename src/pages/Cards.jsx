@@ -58,7 +58,10 @@ function Cards() {
             {renderMobileDebitCards()}
           </Tab>
           <Tab eventKey="companyCards" title="All company cards">
-            <div className="cards-tab-content all-company-cards"> All Company Cards </div>
+            <div className="cards-tab-content all-company-cards">
+              {" "}
+              All Company Cards{" "}
+            </div>
           </Tab>
         </Tabs>
       </div>
