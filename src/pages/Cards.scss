@@ -139,11 +139,19 @@
 .mobile-card-page-container {
   .mobile-cards-header {
     background-color: #0c365a;
-    padding: 3.2rem 1.5rem 1.5rem;
+    padding: 2.5rem 1.5rem 1.5rem;
 
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+
+    .aspire-logo {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
 
     .available-balance-heading {
       color: #ffffff;

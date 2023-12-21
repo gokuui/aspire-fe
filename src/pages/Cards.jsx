@@ -8,6 +8,7 @@ import CarousalCards from "../components/cards/CarousalCards";
 import Loader from "../components/Loader";
 import useCards from "../hooks/useCards";
 import DeleteCardModal from "../components/cards/DeleteCardModal";
+import AspireLogo from "../assets/images/aspire-logo.svg";
 
 import "./Cards.scss";
 import AddCardModal from "../components/cards/AddCardModal";
@@ -37,7 +38,8 @@ function Cards() {
     return (
       <div className="mobile-card-page-container">
         <div className="mobile-cards-header">
-          <p className="available-balance-heading">Available balance</p>
+          <img src={AspireLogo} className="aspire-logo" alt="Aspire Logo" />
+          <p className="available-balance-heading">Account balance</p>
           <div className="balance-new-card-container">
             <div className="available-balance">
               <span className="currency-type">S$</span>
