@@ -1,10 +1,7 @@
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes,
-  Redirect,
   Navigate,
 } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
