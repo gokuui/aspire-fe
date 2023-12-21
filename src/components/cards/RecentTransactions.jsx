@@ -53,7 +53,7 @@ function RecentTransactions(props) {
 
     return (
       <div className="recent-transaction-item" key={transaction.id}>
-        {renderTransactionIcon(transaction.icon)}
+        {renderTransactionIcon(transaction.icon, transaction.name)}
 
         <div className="transaction-info">
           <span className="transaction-name"> {transaction.name} </span>
