@@ -68,7 +68,11 @@ function Card(props) {
         </div>
       </div>
 
-      <section className={`card-component ${freeze ? "card-frozen" : ""}`}>
+      <section
+        className={`card-component ${freeze ? "card-frozen" : ""} ${
+          isMobileView ? "mobile-view" : ""
+        }`}
+      >
         <img
           src={CardAspireLogo}
           className="card-aspire-logo"
