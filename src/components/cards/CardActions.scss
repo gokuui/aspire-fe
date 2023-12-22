@@ -1,11 +1,11 @@
 .card-action-container {
   display: flex;
-  background-color: #ecf3fe;
+  background-color: #edf3ff;
   border-radius: 1rem;
   justify-content: space-between;
   font-size: 0.875rem;
 
-  padding: 1.25rem 1.75rem;
+  padding: 1.25rem;
   margin-bottom: 0;
 
   .action-item {
@@ -28,6 +28,5 @@
 
   &.mobile-view {
     border-radius: 1rem 1rem 0 0;
-    padding: 1.25rem 1.25rem;
   }
 }
