@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+// This hook returns true/false indicating whether the given media query matches the current window size
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false);
 

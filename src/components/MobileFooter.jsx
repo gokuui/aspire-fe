@@ -1,16 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
-import { routes } from "../constants";
 
+import { routes } from "../constants";
 import HomeIcon from "../assets/images/home.svg";
 import CardsIcon from "../assets/images/pay.svg";
 import PaymentIcon from "../assets/images/payments.svg";
 import ProfileIcon from "../assets/images/profile.svg";
 import CreditIcon from "../assets/images/credit.svg";
+
 import "./MobileFooter.scss";
 
 function MobileFooter() {
   const location = useLocation();
 
+  // returns true/false indicating whether the given route is in view or not
   const isActive = (route) => {
     return location.pathname === route;
   };
@@ -43,8 +45,7 @@ function MobileFooter() {
     },
   ];
 
-  // TODO: fix the footer icons.
-  // for showing active state and disabled state
+  // TODO: fix the footer icons for showing active state and disabled state.
   return (
     <ul className="mobile-footer-container">
       {footerItems.map((footerItem) => (

@@ -34,13 +34,14 @@
 
     &.active {
       span {
-        color: #01d167;
+        color: var(--app-primary);
         font-weight: bold;
       }
     }
   }
 }
 
+// in smaller devices less that 400px, reduce the padding
 @media screen and (max-width: 400px) {
   .mobile-footer-container {
     padding: 0.5rem 1rem;

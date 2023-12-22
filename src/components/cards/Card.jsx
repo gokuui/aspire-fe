@@ -13,7 +13,7 @@ function Card(props) {
   const renderCardNumber = () => {
     let cardNo = cardNumber;
 
-    // id card number is hidden, mask it.
+    // if card number is hidden, mask the first 12 chars.
     if (!showCardNumber) {
       let lastFourDigits = cardNo.slice(-4);
       cardNo = lastFourDigits.padStart(16, "●");
@@ -21,6 +21,7 @@ function Card(props) {
 
     let cardSections = [];
 
+    // break into 4 sections
     for (let i = 0; i < 16; i += 4) {
       cardSections.push(cardNo.slice(i, i + 4));
     }
@@ -48,52 +49,54 @@ function Card(props) {
     const expiryMonth = String(expiry.getMonth() + 1);
     const expiryYear = String(expiry.getFullYear());
 
-    return `${expiryMonth.padStart(0, 2)}/${expiryYear.slice(2)}`;
+    return `${expiryMonth.padStart(2, 0)}/${expiryYear.slice(2)}`;
   };
 
   return (
-    <div className="card-container">
-      <div className={isMobileView ? "mobile-view" : ""}>
-        <div
-          className="show-card-number-container"
-          onClick={() => setShowCardNumber((showCard) => !showCard)}
-        >
-          <img
-            src={EyeIcon}
-            alt={showCardNumber ? "Hide card number" : "Show card number"}
-          />
-          <span>
-            {showCardNumber ? "Hide card number" : "Show card number"}{" "}
-          </span>
-        </div>
-      </div>
+    <section className={`card-container ${isMobileView ? "mobile-view" : ""}`}>
+      {/* we need to style show number differently in mobile view */}
 
-      <section
-        className={`card-component ${freeze ? "card-frozen" : ""} ${
-          isMobileView ? "mobile-view" : ""
-        }`}
+      <div
+        className="show-card-number-container"
+        onClick={() => setShowCardNumber((showCard) => !showCard)}
       >
         <img
-          src={CardAspireLogo}
-          className="card-aspire-logo"
-          alt="Aspire card"
+          src={EyeIcon}
+          alt={showCardNumber ? "Hide card number" : "Show card number"}
         />
+        <span>{showCardNumber ? "Hide card number" : "Show card number"} </span>
+      </div>
 
-        <p className="card-name"> {name} </p>
+      {/* adding this for showing white color in mobile view.  */}
+      {/* TODO: see if there is any better way */}
+      <div className="white-bg-container">
+        <div className={`card-component ${freeze ? "card-frozen" : ""} `}>
+          <img
+            src={CardAspireLogo}
+            className="card-aspire-logo"
+            alt="Aspire card"
+          />
 
-        {renderCardNumber()}
+          <p className="card-name"> {name} </p>
 
-        <div className="cvv-container">
-          <span> {`Thru: ${getCardExpriy()}`} </span>
+          {renderCardNumber()}
 
-          <p className="d-flex align-items-center">
-            <span>CVV: </span> <span className="mask-cvv"> *** </span>
-          </p>
+          <div className="cvv-container">
+            <span> {`Thru: ${getCardExpriy()}`} </span>
+
+            <p className="d-flex align-items-center">
+              <span>CVV: </span> <span className="mask-cvv"> *** </span>
+            </p>
+          </div>
+
+          <img
+            src={CardVisaLogo}
+            className="card-visa-logo"
+            alt="Aspire card"
+          />
         </div>
-
-        <img src={CardVisaLogo} className="card-visa-logo" alt="Aspire card" />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

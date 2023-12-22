@@ -12,7 +12,7 @@ import NextIcon from "../../assets/images/next.svg";
 function RecentTransactions(props) {
   const { recentTransactions } = props;
 
-  // move this to separate component when more no of icons are added
+  // move this to separate component when more number of icons are added
   const renderTransactionIcon = (icon, name) => {
     switch (icon) {
       case "FileStorage":

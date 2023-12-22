@@ -2,10 +2,12 @@ import { cardDetails } from "../mock/cardDetails";
 import { getRandomCardNumber, getRandomCvv } from "../utils/cardUtils";
 import sleep from "../utils/sleep";
 
+// Contains ALL Api's need for cards page.
+
 // returns promise that resoves with card details
 function getCardInfo() {
   // call API to get actual data here
-  return new Promise((resolve) => {
+  return new Promise(async (resolve) => {
     // adding delay to mimic network api call
     return sleep(1).then(() => resolve(cardDetails));
   });
@@ -25,6 +27,7 @@ function deleteCard(cardNo) {
   return Promise.resolve(true);
 }
 
+// creates a new card with given name
 function addNewCard(cardName) {
   // call the add api and return the created card info.
 

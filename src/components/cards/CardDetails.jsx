@@ -1,6 +1,7 @@
 import { Accordion } from "react-bootstrap";
-import "./CardAccordion.scss";
+
 import CardDetailsIcon from "../../assets/images/card-details-icon.svg";
+import "./CardAccordion.scss";
 
 function CardDetails() {
   return (

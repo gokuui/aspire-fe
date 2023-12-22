@@ -1,4 +1,5 @@
 import { Button, Col, Container, Row, Tab, Tabs } from "react-bootstrap";
+
 import CardActions from "../components/cards/CardActions";
 import CardDetails from "../components/cards/CardDetails";
 import RecentTransactions from "../components/cards/RecentTransactions";
@@ -9,11 +10,11 @@ import Loader from "../components/Loader";
 import useCards from "../hooks/useCards";
 import DeleteCardModal from "../components/cards/DeleteCardModal";
 import AspireLogo from "../assets/images/aspire-logo.svg";
-
-import "./Cards.scss";
 import AddCardModal from "../components/cards/AddCardModal";
 import { breakpoints } from "../constants";
 import useMediaQuery from "../hooks/useMediaQuery";
+
+import "./Cards.scss";
 
 function Cards() {
   const isMobile = useMediaQuery(`(max-width: ${breakpoints.md} )`);
@@ -27,18 +28,21 @@ function Cards() {
     getSelectedCardInfo,
     freezeCard,
     deleteCard,
-    setDeleteCardModal,
-    deleteCardModal,
-    addCardModal,
-    setAddCardModal,
+    setShowDeleteCardModal,
+    showDeleteCardModal,
+    showAddCardModal,
+    setShowAddCardModal,
     addNewCard,
   } = useCards();
 
+  // mobile page view
+  // keeping mobile and desktop views separetly for more flexibility to change in future
   const renderMobileView = () => {
     return (
       <div className="mobile-card-page-container">
         <div className="mobile-cards-header">
           <img src={AspireLogo} className="aspire-logo" alt="Aspire Logo" />
+
           <p className="available-balance-heading">Account balance</p>
           <div className="balance-new-card-container">
             <div className="available-balance">
@@ -48,7 +52,10 @@ function Cards() {
                 {cardDetails?.availableBalance}
               </span>
             </div>
-            <Button className="new-card" onClick={() => setAddCardModal(true)}>
+            <Button
+              className="new-card"
+              onClick={() => setShowAddCardModal(true)}
+            >
               <img src={MobilePlusIcon} alt="Add new card" />
               <span>New card </span>
             </Button>
@@ -81,7 +88,10 @@ function Cards() {
                 {cardDetails?.availableBalance}
               </span>
             </div>
-            <Button className="new-card" onClick={() => setAddCardModal(true)}>
+            <Button
+              className="new-card"
+              onClick={() => setShowAddCardModal(true)}
+            >
               <img src={PlusIcon} alt="Add new card" />
               <span>New card </span>
             </Button>
@@ -113,7 +123,7 @@ function Cards() {
               />
               <CardActions
                 card={getSelectedCardInfo()}
-                deleteCard={() => setDeleteCardModal(true)}
+                deleteCard={() => setShowDeleteCardModal(true)}
                 freezeCard={() => freezeCard(getSelectedCardInfo())}
               />
             </Col>
@@ -150,7 +160,7 @@ function Cards() {
             <div className="debit-card-mobile-card-actions">
               <CardActions
                 card={getSelectedCardInfo()}
-                deleteCard={() => setDeleteCardModal(true)}
+                deleteCard={() => setShowDeleteCardModal(true)}
                 freezeCard={() => freezeCard(getSelectedCardInfo())}
                 isMobileView={isMobile}
               />
@@ -181,17 +191,17 @@ function Cards() {
   return (
     <div className="card-page-container">
       {isMobile ? renderMobileView() : renderDesktopView()}
-      {deleteCardModal && (
+      {showDeleteCardModal && (
         <DeleteCardModal
           deleteCard={() => deleteCard(getSelectedCardInfo())}
-          closeModal={() => setDeleteCardModal(false)}
+          closeModal={() => setShowDeleteCardModal(false)}
         />
       )}
 
-      {addCardModal && (
+      {showAddCardModal && (
         <AddCardModal
           addCard={addNewCard}
-          closeModal={() => setAddCardModal(false)}
+          closeModal={() => setShowAddCardModal(false)}
         />
       )}
     </div>

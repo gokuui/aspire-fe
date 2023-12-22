@@ -1,11 +1,5 @@
+// styles common to desktop and mobile
 .card-page-container {
-  .desktop-card-page-container {
-    display: flex;
-    flex-direction: column;
-
-    padding: 3.75rem;
-  }
-
   .cards-header {
     display: flex;
     flex-direction: column;
@@ -133,6 +127,14 @@
       margin-top: 2.25rem;
     }
   }
+}
+
+// desktop specific styles
+.desktop-card-page-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 3.75rem;
 }
 
 // mobile specific styles

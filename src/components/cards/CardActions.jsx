@@ -1,14 +1,16 @@
-import "./CardActions.scss";
 import FreezeIcon from "../../assets/images/freeze-card.svg";
 import SpendLimit from "../../assets/images/spend-limit.svg";
 import GPay from "../../assets/images/gpay.svg";
 import ReplaceCard from "../../assets/images/replace-card.svg";
 import CancelCard from "../../assets/images/cancel-card.svg";
 
+import "./CardActions.scss";
+
 function CardActions(props) {
   const { freezeCard, deleteCard, card, isMobileView } = props;
 
   return (
+    // in mobile view, we need to style the border radius differently
     <ul
       className={`card-action-container ${isMobileView ? "mobile-view" : ""}`}
     >

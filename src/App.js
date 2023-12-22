@@ -5,9 +5,9 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+
 import useMediaQuery from "./hooks/useMediaQuery";
 import { breakpoints, routes } from "./constants";
-
 import Home from "./pages/Home";
 import Cards from "./pages/Cards";
 import Credit from "./pages/Credit";
@@ -19,14 +19,15 @@ import SideNav from "./components/SideNav";
 import "./App.scss";
 
 function App() {
-  const isMobile = useMediaQuery(`(max-width: ${breakpoints.md} )`);
+  // for mobile and tablet sized devices, we display mobile version of our app
+  const isMobileView = useMediaQuery(`(max-width: ${breakpoints.md} )`);
 
   return (
     <Router>
       <Container className="app-container" fluid>
         <Row>
           {/* hide sidebar in mobile view */}
-          {!isMobile && (
+          {!isMobileView && (
             <Col sm={12} md={3}>
               <SideNav />
             </Col>
@@ -49,7 +50,8 @@ function App() {
           </Col>
         </Row>
 
-        {isMobile && <MobileFooter />}
+        {/* footer is only shown in mobile view */}
+        {isMobileView && <MobileFooter />}
       </Container>
     </Router>
   );

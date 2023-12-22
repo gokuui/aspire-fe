@@ -8,6 +8,7 @@ function AddCardModal({ addCard, closeModal }) {
     const formEl = document.querySelector(".add-new-card-form");
 
     // TODO: use React hook forms when form becomes complex
+    // for now, using html form validation methods
     if (!formEl.checkValidity()) {
       formEl.reportValidity();
       return;

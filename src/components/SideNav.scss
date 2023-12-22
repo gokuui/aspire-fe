@@ -40,7 +40,7 @@
       color: white;
 
       &.active {
-        color: #01d167;
+        color: var(--app-primary);
         font-weight: bold;
       }
 

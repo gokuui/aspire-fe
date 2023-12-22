@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+
 import {
   getCardInfo,
   freezeCard as freezeCardAPI,
@@ -6,18 +7,21 @@ import {
   addNewCard as addCardAPI,
 } from "../services/card";
 
+// This hook contains all the state logic for Cards Page
 function useCards() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   const [cardDetails, setCardDetails] = useState([]);
+  // this holds the card index that is shown in carousal
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
 
-  const [deleteCardModal, setDeleteCardModal] = useState(false);
-  const [addCardModal, setAddCardModal] = useState(false);
+  // these are for showing add/delete card modals
+  const [showDeleteCardModal, setShowDeleteCardModal] = useState(false);
+  const [showAddCardModal, setShowAddCardModal] = useState(false);
 
+  // get required data on page mount
   useEffect(() => {
-    // get required data on page mount
     let isStale = false;
 
     const fetchCardsData = async () => {
@@ -41,6 +45,7 @@ function useCards() {
     fetchCardsData();
 
     return () => {
+      // to avoid stale data because of race conditions
       isStale = true;
     };
   }, []);
@@ -80,6 +85,7 @@ function useCards() {
         );
 
         // update the selected card index to next card
+        // we show the next card when user deletes current card
         setSelectedCardIndex(
           selectedCardIndex % (cardDetails.debitCards.length - 1)
         );
@@ -88,7 +94,7 @@ function useCards() {
         console.error("useCards: deleteCard: API failed", error);
         // TODO: show toast error messaging
       } finally {
-        setDeleteCardModal(false);
+        setShowDeleteCardModal(false);
       }
     },
     [cardDetails, selectedCardIndex]
@@ -111,7 +117,7 @@ function useCards() {
         console.error("useCards: addNewCard: API failed", error);
         // TODO: show toast error messaging
       } finally {
-        setAddCardModal(false);
+        setShowAddCardModal(false);
       }
     },
     [cardDetails]
@@ -126,10 +132,10 @@ function useCards() {
     getSelectedCardInfo,
     freezeCard,
     deleteCard,
-    deleteCardModal,
-    setDeleteCardModal,
-    addCardModal,
-    setAddCardModal,
+    showDeleteCardModal,
+    setShowDeleteCardModal,
+    showAddCardModal,
+    setShowAddCardModal,
     addNewCard,
   };
 }

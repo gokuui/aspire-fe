@@ -1,6 +1,6 @@
 import { Carousel } from "react-bootstrap";
-import Card from "./Card";
 
+import Card from "./Card";
 import "./CarousalCards.scss";
 
 function CarousalCards(props) {
@@ -9,10 +9,10 @@ function CarousalCards(props) {
 
   return (
     <Carousel
-      controls={false}
       activeIndex={selectedCardIndex}
       onSelect={(selectedIndex) => setSelectedCardIndex(selectedIndex)}
       touch={true}
+      controls={false}
       pause={"hover"}
       slide={true}
       keyboard={true}
