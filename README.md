@@ -1,3 +1,12 @@
+# Aspire-FE
+
+This project is developed using React and Bootstrap libraries and it is deployed at `https://aspire-fe-lite.netlify.app/`.
+
+Steps to run the project.
+
+1. `npm install`: installs the required dependencies
+2. `npm start`: runs the app in dev mode locally.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
