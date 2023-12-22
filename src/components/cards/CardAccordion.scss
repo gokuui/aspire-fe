@@ -16,11 +16,11 @@
     font-size: 14px;
 
     &::after {
-      background-image: url("../../assets/images/up-arrow.svg");
+      background-image: url("../../assets/images/down-arrow.svg");
     }
 
     &:not(.collapsed)::after {
-      background-image: url("../../assets/images/down-arrow.svg");
+      background-image: url("../../assets/images/up-arrow.svg");
       transform: none;
     }
   }
